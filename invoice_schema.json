@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "title": "Invoice",
+  "description": "A simple invoice format",
+  "type": "object",
+  "properties": {
+    "invoiceNumber": {
+      "description": "The unique identifier for the invoice.",
+      "type": "string"
+    },
+    "dateIssued": {
+      "description": "The date when the invoice was issued.",
+      "type": "string",
+      "format": "date"
+    },
+    "dueDate": {
+      "description": "The date by which the invoice should be paid.",
+      "type": "string",
+      "format": "date"
+    },
+    "from": {
+      "description": "Information about the issuer of the invoice.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address": { "type": "string" }
+      },
+      "required": ["name", "address"]
+    },
+    "to": {
+      "description": "Information about the recipient of the invoice.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address": { "type": "string" }
+      },
+      "required": ["name", "address"]
+    },
+    "items": {
+      "type": "array",
+      "description": "List of items included in the invoice.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": { "type": "string" },
+          "quantity": { "type": "number" },
+          "price": { "type": "number" }
+        },
+        "required": ["description", "quantity", "price"]
+      }
+    },
+    "total": {
+      "description": "Total amount of the invoice.",
+      "type": "number"
+    }
+  },
+  "required": ["invoiceNumber", "dateIssued", "from", "to", "items", "total"]
+}

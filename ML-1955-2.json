@@ -1,0 +1,31 @@
+{
+    "Application Information": {
+        "Full Name": "Jane Doe",
+        "Phone Number": "555-0100",
+        "Home Address": "123 Any Street, Any Town, USA",
+        "Mailing Address": "same as above"
+    },
+    "Previous Employment History": [
+        {
+            "Start Date": "1/15/2009",
+            "End Date": "6/30/2011",
+            "Employer Name": "Any Company",
+            "Position Held": "Assistant baker",
+            "Reason for Leaving": "relocated"
+        },
+        {
+            "Start Date": "7/1/2011",
+            "End Date": "8/10/2013",
+            "Employer Name": "Example Corp.",
+            "Position Held": "Baker",
+            "Reason for Leaving": "better opp."
+        },
+        {
+            "Start Date": "8/15/2013",
+            "End Date": "Present",
+            "Employer Name": "AnyCompany",
+            "Position Held": "head baker",
+            "Reason for Leaving": "N/A, current"
+        }
+    ]
+}
