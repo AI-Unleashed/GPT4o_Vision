@@ -1,6 +1,5 @@
 from openai import OpenAI
 import base64
-import config  # Importing the config file
 import json
 import os
 from urllib.parse import urlparse
@@ -18,7 +17,9 @@ def load_json_schema(schema_file: str) -> dict:
         return json.load(file)
 
 
+mode = 'URL'  # different logic for URL or LocalFile
 image_url = 'https://datasets-server.huggingface.co/assets/katanaml-org/invoices-donut-data-v1/--/default/train/16/image/image.jpg?Expires=1716138481&Signature=dXQACSj7DwU-73svmKmnR1huW1ATMqEy0b5L~6ziHM6b-4Kcv8eiXJqsoB4J1e1qwfAwfouJNUxOFG2cJf4plwUmlgQsNU3pTKcNc~4lItfE0q-aPLib3fB3BlUPjFa276V34dqxU0rzU-RHEpxhD3irLe7KJQchXPpT8v~B74FuJpas2j1neSuJybUypb0tfCcLjJ4Op9sVD8QBhDkcS~lGIB23Ej9pYqc98yzZ-rQh-xdLZhw8zG7talREe4iYyuOeA3zXy5CBPk2kLnfMuy2VWop2EEQ70v~n40cvrU4hZCsxV~3BagJztGwyLbid-ew9dTaQpteFXtDIAaiLvg__&Key-Pair-Id=K3EI6M078Z3AC3'
+local_path = ''
 invoice_schema = load_json_schema('invoice_schema.json')
 response = client.chat.completions.create(
     model='gpt-4o',
@@ -49,12 +50,12 @@ response = client.chat.completions.create(
 json_data = json.loads(response.choices[0].message.content)
 
 # Determine the filename based on File_Mode
-if config.File_Mode == "URL":
+if mode == "URL":
     filename_without_extension = os.path.splitext(
-        os.path.basename(urlparse(config.Demo_Image_URL).path))[0]
+        os.path.basename(urlparse(image_url).path))[0]
 else:  # Local file mode
     filename_without_extension = os.path.splitext(
-        os.path.basename(config.Demo_Image_LocalPath))[0]
+        os.path.basename(local_path))[0]
 
 # Add .json extension to the filename
 json_filename = f"{filename_without_extension}.json"

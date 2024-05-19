@@ -1,6 +1,7 @@
 {
     "invoiceNumber": "74322107",
     "dateIssued": "2016-02-02",
+    "dueDate": null,
     "from": {
         "name": "Davis-Obrien",
         "address": "736 Derek Station Suite 883, New Laura, WA 77568"
@@ -12,7 +13,7 @@
     "items": [
         {
             "description": "100cm Nordic Round Area Rug Abstract Geometric Patterns Non-Slip Floor Carpet",
-            "quantity": 2.0,
+            "quantity": 2,
             "price": 30.98
         }
     ],
