@@ -18,7 +18,8 @@ def load_json_schema(schema_file: str) -> dict:
 
 
 mode = 'URL'  # different logic for URL or LocalFile
-image_url = 'https://datasets-server.huggingface.co/assets/katanaml-org/invoices-donut-data-v1/--/default/train/16/image/image.jpg?Expires=1716138481&Signature=dXQACSj7DwU-73svmKmnR1huW1ATMqEy0b5L~6ziHM6b-4Kcv8eiXJqsoB4J1e1qwfAwfouJNUxOFG2cJf4plwUmlgQsNU3pTKcNc~4lItfE0q-aPLib3fB3BlUPjFa276V34dqxU0rzU-RHEpxhD3irLe7KJQchXPpT8v~B74FuJpas2j1neSuJybUypb0tfCcLjJ4Op9sVD8QBhDkcS~lGIB23Ej9pYqc98yzZ-rQh-xdLZhw8zG7talREe4iYyuOeA3zXy5CBPk2kLnfMuy2VWop2EEQ70v~n40cvrU4hZCsxV~3BagJztGwyLbid-ew9dTaQpteFXtDIAaiLvg__&Key-Pair-Id=K3EI6M078Z3AC3'
+#https://images.ehive.com/accounts/5831/objects/images/gb3v5i_93nt_l.jpg
+image_url = 'https://www.invoicesimple.com/wp-content/uploads/2018/06/Sample-Invoice-printable.png'
 local_path = ''
 invoice_schema = load_json_schema('invoice_schema.json')
 response = client.chat.completions.create(
