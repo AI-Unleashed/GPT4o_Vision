@@ -18,7 +18,8 @@ def load_json_schema(schema_file: str) -> dict:
 
 
 mode = 'URL'  # different logic for URL or LocalFile
-#https://images.ehive.com/accounts/5831/objects/images/gb3v5i_93nt_l.jpg
+#image_url = 'https://penhopechest.com/wp-content/uploads/2012/04/handwritten-receipt-1981.jpg'
+#image_url = 'https://images.ehive.com/accounts/5831/objects/images/gb3v5i_93nt_l.jpg'
 image_url = 'https://www.invoicesimple.com/wp-content/uploads/2018/06/Sample-Invoice-printable.png'
 local_path = ''
 invoice_schema = load_json_schema('invoice_schema.json')
